@@ -1,11 +1,12 @@
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 
-public class Publi extends VBox {
+public class Publi extends HBox { // Utilisation de HBox pour centrer verticalement
     private String nom;
     private String titre;
     private String description;
@@ -16,23 +17,28 @@ public class Publi extends VBox {
         this.description = description;
 
         // Configuration du panel
-        setPrefSize(800, 80);
-        setBackground(new Background(new BackgroundFill(Color.web("#620D2A"), new CornerRadii(10), Insets.EMPTY)));
-        setPadding(new Insets(10, 20, 10, 20));
-        setSpacing(5);
+        setPrefSize(1340, 130);
+        setBackground(new Background(new BackgroundFill(Color.web("#620D2A"), new CornerRadii(200), Insets.EMPTY)));
+        setPadding(new Insets(0, 0, 0, 161)); // Marge de 161 pixels à gauche
+        setAlignment(Pos.CENTER_LEFT); // Centrer verticalement et aligner à gauche
+
+        // Espacement horizontal entre les labels
+        setSpacing(10);
 
         Label nomLabel = new Label(nom + " - ");
         Label titreLabel = new Label(titre + " - ");
         Label descriptionLabel = new Label(description);
 
-        nomLabel.setFont(Font.font("Arial", FontWeight.BOLD, 16));
-        titreLabel.setFont(Font.font("Arial", FontWeight.NORMAL, 14));
-        descriptionLabel.setFont(Font.font("Arial", FontWeight.NORMAL, 12));
+        // Augmentation de la taille de la police
+        nomLabel.setFont(Font.font("Arial", FontWeight.BOLD, 23)); // Taille de police augmentée
+        titreLabel.setFont(Font.font("Arial", FontWeight.NORMAL, 18)); // Taille de police augmentée
+        descriptionLabel.setFont(Font.font("Arial", FontWeight.NORMAL, 18)); // Taille de police augmentée
 
         nomLabel.setTextFill(Color.WHITE);
         titreLabel.setTextFill(Color.WHITE);
         descriptionLabel.setTextFill(Color.WHITE);
 
+        // Ajout des labels au HBox
         getChildren().addAll(nomLabel, titreLabel, descriptionLabel);
     }
 }
