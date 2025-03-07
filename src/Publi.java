@@ -17,7 +17,7 @@ public class Publi extends HBox { // Utilisation de HBox pour centrer verticalem
         this.description = description;
 
         // Configuration du panel
-        setPrefSize(1340, 130);
+        setPrefSize(1340, 130); // Taille par défaut
         setBackground(new Background(new BackgroundFill(Color.web("#620D2A"), new CornerRadii(200), Insets.EMPTY)));
         setPadding(new Insets(0, 0, 0, 161)); // Marge de 161 pixels à gauche
         setAlignment(Pos.CENTER_LEFT); // Centrer verticalement et aligner à gauche
@@ -40,5 +40,18 @@ public class Publi extends HBox { // Utilisation de HBox pour centrer verticalem
 
         // Ajout des labels au HBox
         getChildren().addAll(nomLabel, titreLabel, descriptionLabel);
+
+        // Effet de survol
+        setOnMouseEntered(event -> {
+            setPrefSize(1380, 140); // Agrandir légèrement la taille
+            setBackground(new Background(new BackgroundFill(Color.web("#620D2A"), new CornerRadii(200), Insets.EMPTY)));
+            setPadding(new Insets(0, 0, 0, 171)); // Ajuster la marge gauche pour correspondre à la nouvelle taille
+        });
+
+        setOnMouseExited(event -> {
+            setPrefSize(1340, 130); // Revenir à la taille d'origine
+            setBackground(new Background(new BackgroundFill(Color.web("#620D2A"), new CornerRadii(200), Insets.EMPTY)));
+            setPadding(new Insets(0, 0, 0, 161)); // Rétablir la marge gauche d'origine
+        });
     }
 }
