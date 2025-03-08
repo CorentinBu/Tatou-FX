@@ -88,12 +88,41 @@ public class Search {
 
                 // Ajouter des publications (exemple)
                 publiPanel.getChildren().addAll(
-                                new Publi("Nom Asso 1", "Titre Publication 1",
-                                                "Description courte de la publication 1"),
-                                new Publi("Nom Asso 2", "Titre Publication 2",
-                                                "Description courte de la publication 2"),
-                                new Publi("Nom Asso 3", "Titre Publication 3",
-                                                "Description courte de la publication 3"));
+                                new Publi("Nom Asso 1", "Titre Publication 1", "Description courte de la publication 1",
+                                                stage, view,
+                                                scene),
+                                new Publi("Nom Asso 2", "Titre Publication 2", "Description courte de la publication 2",
+                                                stage, view, scene),
+
+                                new Publi("Nom Asso 3", "Titre Publication 3", "Description courte de la publication 3",
+                                                stage, view, scene),
+                                new Publi("Nom Asso 1", "Titre Publication 1", "Description courte de la publication 1",
+                                                stage, view,
+                                                scene),
+                                new Publi("Nom Asso 2", "Titre Publication 2", "Description courte de la publication 2",
+                                                stage, view,
+                                                scene),
+                                new Publi("Nom Asso 3", "Titre Publication 3", "Description courte de la publication 3",
+                                                stage, view,
+                                                scene),
+                                new Publi("Nom Asso 1", "Titre Publication 1", "Description courte de la publication 1",
+                                                stage, view,
+                                                scene),
+                                new Publi("Nom Asso 2", "Titre Publication 2", "Description courte de la publication 2",
+                                                stage, view,
+                                                scene),
+                                new Publi("Nom Asso 3", "Titre Publication 3", "Description courte de la publication 3",
+                                                stage, view,
+                                                scene),
+                                new Publi("Nom Asso 1", "Titre Publication 1", "Description courte de la publication 1",
+                                                stage, view,
+                                                scene),
+                                new Publi("Nom Asso 2", "Titre Publication 2", "Description courte de la publication 2",
+                                                stage, view,
+                                                scene),
+                                new Publi("Nom Asso 3", "Titre Publication 3", "Description courte de la publication 3",
+                                                stage, view,
+                                                scene));
 
                 // Ajouter un ScrollPane pour les publications
                 ScrollPane scrollPane = new ScrollPane(publiPanel);
