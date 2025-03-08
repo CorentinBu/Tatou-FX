@@ -72,10 +72,12 @@ public class View {
         searchField.setStyle(
                 "-fx-background-color: #FFFFFF; -fx-text-fill: #000000; -fx-border-radius: 5; -fx-padding: 5;");
 
+        Scene scene = new Scene(root, 1920, 1080);
+
         // Gérer l'événement de la touche "Entrée"
         searchField.setOnAction(event -> {
             String searchText = searchField.getText();
-            Search search = new Search(searchText, stage); // Passer le stage actuel
+            Search search = new Search(searchText, stage, this, scene); // Passer le stage actuel
             search.show(); // Appeler la méthode show de Search
         });
 
@@ -107,18 +109,30 @@ public class View {
 
         // Add publication items to the panel
         publiPanel.getChildren().addAll(
-                new Publi("Nom Asso 1", "Titre Publication 1", "Description courte de la publication 1"),
-                new Publi("Nom Asso 2", "Titre Publication 2", "Description courte de la publication 2"),
-                new Publi("Nom Asso 3", "Titre Publication 3", "Description courte de la publication 3"),
-                new Publi("Nom Asso 1", "Titre Publication 1", "Description courte de la publication 1"),
-                new Publi("Nom Asso 2", "Titre Publication 2", "Description courte de la publication 2"),
-                new Publi("Nom Asso 3", "Titre Publication 3", "Description courte de la publication 3"),
-                new Publi("Nom Asso 1", "Titre Publication 1", "Description courte de la publication 1"),
-                new Publi("Nom Asso 2", "Titre Publication 2", "Description courte de la publication 2"),
-                new Publi("Nom Asso 3", "Titre Publication 3", "Description courte de la publication 3"),
-                new Publi("Nom Asso 1", "Titre Publication 1", "Description courte de la publication 1"),
-                new Publi("Nom Asso 2", "Titre Publication 2", "Description courte de la publication 2"),
-                new Publi("Nom Asso 3", "Titre Publication 3", "Description courte de la publication 3"));
+                new Publi("Nom Asso 1", "Titre Publication 1", "Description courte de la publication 1", stage, this,
+                        scene),
+                new Publi("Nom Asso 2", "Titre Publication 2", "Description courte de la publication 2", stage, this,
+                        scene),
+                new Publi("Nom Asso 3", "Titre Publication 3", "Description courte de la publication 3", stage, this,
+                        scene),
+                new Publi("Nom Asso 1", "Titre Publication 1", "Description courte de la publication 1", stage, this,
+                        scene),
+                new Publi("Nom Asso 2", "Titre Publication 2", "Description courte de la publication 2", stage, this,
+                        scene),
+                new Publi("Nom Asso 3", "Titre Publication 3", "Description courte de la publication 3", stage, this,
+                        scene),
+                new Publi("Nom Asso 1", "Titre Publication 1", "Description courte de la publication 1", stage, this,
+                        scene),
+                new Publi("Nom Asso 2", "Titre Publication 2", "Description courte de la publication 2", stage, this,
+                        scene),
+                new Publi("Nom Asso 3", "Titre Publication 3", "Description courte de la publication 3", stage, this,
+                        scene),
+                new Publi("Nom Asso 1", "Titre Publication 1", "Description courte de la publication 1", stage, this,
+                        scene),
+                new Publi("Nom Asso 2", "Titre Publication 2", "Description courte de la publication 2", stage, this,
+                        scene),
+                new Publi("Nom Asso 3", "Titre Publication 3", "Description courte de la publication 3", stage, this,
+                        scene));
 
         // Create a container for the publication panel
         VBox publiContainer = new VBox();
@@ -137,18 +151,15 @@ public class View {
         // Set the ScrollPane as the center of the root
         root.setCenter(scrollPane);
 
-        // Create the scene and set it to the stage
-        Scene scene = new Scene(root, 1920, 1080);
-
         scene.setFill(Color.web("#FFA83C")); // Set the scene's background color
         stage.setScene(scene);
         stage.show();
     }
 
-    // Méthode pour afficher la page View
-    public void show(Stage primaryStage) {
-        primaryStage.setScene(new Scene(root, 1920, 1080)); // Définir la scène sur le stage
-        primaryStage.show(); // Afficher le stage
+    public void show(Scene scene) {
+        // Scene scene = new Scene(root, 1920, 1080);
+        stage.setScene(scene);
+        stage.show();
     }
 
     private Button createStyledButton(String text) {

@@ -7,6 +7,7 @@ public class Main extends Application {
         Model model = new Model();
         View view = new View();
         Controller controller = new Controller(model, view);
+        // view.show();
     }
 
     public static void main(String[] args) {
