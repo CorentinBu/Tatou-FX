@@ -34,14 +34,6 @@ public class Controller {
             }
         });
 
-        view.getRechercheButton().setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Recherche button clicked");
-                model.sayHello(); // Example action
-            }
-        });
-
         view.getProfilButton().setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
